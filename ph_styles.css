@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* I set up the font families in different @fonts so that they can be in their respective sections and work properly in different browsers. Under each name of the family I have the woff and ttf types along with the corresponding format.  */
+/* I set up the font families in different @fonts so that they can be in their respective sections and work properly in different browsers. Under each name of the family I have the woff and ttf types along with the corresponding format. The sources and urls are all in '' single quotes and parenthesis, but the font-famiy is written by itself. The url determines where I get those characters that show up in the pages and the format recognizes what will be read. */
 @font-face {
     font-family: Champagne;
     src: url('cac_champagne.woff') format('woff'), 
@@ -41,7 +41,7 @@ body {
 header {
     background-color: black;
 }
-
+/* It is important to note that whenever you change the padding sizes they work from the top and around in a clockwise motion. Here I am saying that I want 5px on top, 25px on the right, and so on. It is also important to know that no commas are needed for padding because it won't work otherwise. */
 p {
     margin: 0em;
     padding: 5px 25px 25px 25px;
@@ -61,34 +61,36 @@ address {
 
 
 /* Navigation Styles */
+/* This just says that the a is nested in the nav. */
 nav a {
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-/* This a:link means that I want to select the link section of the Nav. The project tells me to remove the underline so you need to put none after text decoration. Putting the nav in front makes it so that it cannot change links that are outside of the nav. */
+/* This a:link means that I want to select the link section of the Nav. The project tells me to remove the underline so you need to put none after text decoration. Putting the nav in front makes it so that it cannot change links that are outside of the nav. I have a comma separating the nav a: and the nav>ul>li a: visited selectors so that they are the same when when loaded and visited.*/
 nav a:link,
 nav>ul>li a:visited {
     text-decoration: none;
     color: white;
     background-color: hsla(0, 0%, 42%, 0.4);
 }
+/* Here I have the element tags like above, but they are hover and active. Since these two selectors have the same property and value, it is best practice for me to keep the selectors under the same line of code. */
 nav > ul > li > a:hover, 
 nav > ul > li > a:active {
     color: hsla(0, 0%, 100%, .7);
-    background-color: hsl(0, 0%, 42%, .7);
-    
+    background-color: hsl(0, 0%, 42%, .7); 
 }
 
 
 /* Section Styles */
-/* These section.playbills mean that you we are  */
+/* These section.playbill mean that you we are creating a selector for the playbill class, (classes are marked with the period after its surrounding section) and assigning playbill makes the style code applicable to all elements under that playbill class. */
 section.playbill h1{
     font-size: 3em;
     font-weight: normal;
     margin: 0%;
     padding: 20px 0px 10px 20px;
 }
+/* Similar to the class section of the code, an Id selector marks things that are given that ID, and specifically things that are coming from a more specific title. When you write section#play1 that creates an ID for that specific piece of the code, whereas the class element makes it broader. In this case, the play 1 identifies which play we are talking about; adding h1 to the end of the ID makes it so that it affects the header of the section.*/
 section#play1{ 
     background-color:  hsl(240, 100%, 88%);
 }
@@ -117,4 +119,15 @@ section#play4 h1{
 
 
 /* Description List Styles */
-
+/* The dt style rule selects all elements that are listed as so in the index. With identifying only that to the selector, I get to change whatever I want in those definition terms.  */
+dt {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.4);
+}
+/* The dd works the same as the dt except they affect the definition description. That works because I made a style rule for this part of the index. */
+dd {
+    font-size: 1.3em;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
